@@ -1,87 +1,59 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Georama", sans-serif;
 }
 
-header{
-    background-color: #5f27cd;
-    color: #fff;
-    padding: 16px 0;
+body{
+    padding-top: 100px;
+}
+
+header {
     display: flex;
-    border-bottom: 16px solid #341f97;
-    justify-content: center;
-    text-transform: uppercase;
-    font-style: italic;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-header button {
-    margin-left: 16px;
-    padding: 8px;
+.container {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 form {
-    background-color: #c8d6e5;
-    padding: 24px 0;
-    text-align: center;
-    display: none;
+    max-width: 640px;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    align-items: center;
 }
 
-form h2 {
-    margin-bottom: 16px;
+form input, button {
+    display: block;
+    margin-top: 8px;
+    width: 300px;
+    padding: 0;
 }
 
-input, button {
-    padding: 8px;
-}
-
-button {
-    background-color: #009432;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
+form button {
     cursor: pointer;
 }
 
-#botao-cancelar {
-    background-color: red;
+form button:hover {
+    background-color: #4978c2;
+    color: #FFFF;
 }
 
-ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-ul li {
-    max-width: 25%;
+#tasklist{
+    max-width: 640px;
+    width: 100%;
+    cursor: pointer;
     list-style: none;
-    position: relative;
-    max-height: 200px;
-    overflow-y: hidden;
 }
 
-ul li img {
-    width: 100%;
-}
-
-.overlay-image-link {
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all ease .5s;
-}
-
-.overlay-image-link a {
-    color: #ffff;
-    text-decoration: none;
-}
-
-ul li:hover .overlay-image-link {
-    opacity: 1;
+#tasklist li {
+    display: block;
+    width: 300px;
+    text-transform: lowercase;
+    border-bottom: 1px solid rgba(0,0, 0,0.1)   
 }

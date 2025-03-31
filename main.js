@@ -1,28 +1,18 @@
-$(document).ready(function (){
-    $('header button').click (function(){
-        $('form').slideDown();
-    })    
+$('form').on('submit',function(e){
+    e.preventDefault ();
 
-    $('#botao-cancelar').click(function(){
-        $('form').slideUp();
-    })
+    const listaTarefa  = $('#nome-tarefa').val (); // const que recebe o valor do Input;
+    const linhaTarefa = $('<li></li>');           //  const que cria uma linha;
 
+    $(`
+        <li>${listaTarefa}</li>                    
+        `).appendTo(linhaTarefa)                // A linha recebe o valor da const 'linhaTarefa' e acrescenta na const 'listaTarefa'
 
-    $('form').on('submit', function(e){
-        e.preventDefault();
-        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
-        const novoItem = $('<li style="display: none"></li>');
-        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);  
-        $(`
-            <div class="overlay-image-link"> 
-                <a href="${enderecoDaNovaImagem}" target="_blank" title="Ver imagem em tamanho real">
-                    Ver imagem em tamanho real
-            </div>
-            `).appendTo(novoItem);
-            $(novoItem).appendTo('ul');
-            $(novoItem).fadeIn(1000);
-            $('#endereco-imagem-nova').val ('');
-    })
-
+    $(linhaTarefa).appendTo(`ul`)              // O valor recebido e acrescentado no HTML
+    $('#nome-tarefa').val ('');                // Limpa o input
+    
+    $(linhaTarefa).click(function(){
+        $(linhaTarefa).css('text-decoration','line-through');
+        })                                    // A linha quando recebe o click recebe o efeito
 
 })
